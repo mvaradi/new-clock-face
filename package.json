@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~4.2.0"
+  },
+  "fitbit": {
+    "appUUID": "fa29ad47-d89e-463f-8ed2-53006073e2cb",
+    "appType": "clockface",
+    "appDisplayName": "clock-face-vl",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "gemini"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "clock-face-vl"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

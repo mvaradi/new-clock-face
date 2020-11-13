@@ -1,0 +1,4 @@
+<svg class="background">
+  <image href="berni.png" />
+  <text id="myLabel" />
+</svg>
