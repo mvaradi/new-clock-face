@@ -1,4 +1,6 @@
-<svg class="background">
+<svg>
   <image href="berni.png" />
-  <text id="myLabel" />
+  <text id="txtTime" class="clock-text" />
+  <text id="txtDate" class="date-text" />
+  <text id="battery" class="battery-text" />
 </svg>
