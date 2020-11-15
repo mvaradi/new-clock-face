@@ -26,24 +26,11 @@ function tickHandler(evt) {
     let dayNumber = util.zeroPad(today.getDate());
 
     let hours = today.getHours();
-    if (preferences.clockDisplay === "12h") {
-        // 12h format
-        hours = hours % 12 || 12;
-    } else {
-        // 24h format
-        hours = util.zeroPad(hours);
-    }
+    hours = util.zeroPad(hours);
+
     let mins = util.zeroPad(today.getMinutes());
 
-    let colon;
-    if (blink) {
-        colon = ':';
-        blink = !blink;
-    } else {
-        colon = '';
-        blink = !blink;
-    }
-
+    let timeString = `${hours}:${mins}`;
     let dateString = today;
 
     switch(dateFormat) {
@@ -57,5 +44,5 @@ function tickHandler(evt) {
             dateString = `${dayName} ${monthName} ${dayNumber}`;
             break;
     }
-    clockCallback({hours: hours, mins: mins, colon: colon, date: dateString});
+    clockCallback({time: timeString, date: dateString});
 }

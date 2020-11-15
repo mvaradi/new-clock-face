@@ -4,20 +4,7 @@
   text-length: 32;
   text-anchor: middle;
   fill: white;
-}
-
-.hour {
-  x: 30%;
-  y: 50%+40;
-}
-
-.colon {
   x: 50%;
-  y: 50%+40;
-}
-
-.minute {
-  x: 70%;
   y: 50%+40;
 }
 

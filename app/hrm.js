@@ -7,9 +7,10 @@ import { display } from "display";
 import { HeartRateSensor } from "heart-rate";
 import { user } from "user-profile";
 
-let hrm, watchID, hrmCallback;
+let hrm, watchID, hrmCallback, hrmIconHref;
 let lastReading = 0;
 let heartRate;
+let beat = false;
 
 export function initialize(callback) {
     if (me.permissions.granted("access_heart_rate")) {
@@ -21,7 +22,8 @@ export function initialize(callback) {
     } else {
         console.log("Denied Heart Rate");
         callback({
-            bpm: "???"
+            bpm: "???",
+            hrmIconHref: ''
         });
     }
 }
@@ -33,8 +35,15 @@ function getReading() {
         heartRate = hrm.heartRate;
     }
     lastReading = hrm.timestamp;
+    beat = !beat;
+    if (beat) {
+        hrmIconHref = 'heart.png';
+    } else {
+        hrmIconHref = '';
+    }
     hrmCallback({
-        bpm: heartRate
+        bpm: heartRate,
+        hrmIconHref: hrmIconHref
     });
 }
 
