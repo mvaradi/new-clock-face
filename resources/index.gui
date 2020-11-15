@@ -5,4 +5,8 @@
   <text id="txtTimeMinute" class="clock-text minute" />
   <text id="txtDate" class="date-text" />
   <text id="battery" class="battery-text" />
+  <svg>
+    <image id="hrm-icon" href="heart.png" />
+    <text id="hrm-text" />
+  </svg>
 </svg>

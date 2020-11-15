@@ -39,3 +39,20 @@
   y: 10%;
   fill: white;
 }
+
+#hrm-text {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 10;
+  x: 14%;
+  y: 95%;
+  fill: white;
+}
+
+#hrm-icon {
+  width: 30;
+  height: 30;
+  x: 2%;
+  y: 87%;
+  fill: #FF214A;
+}
