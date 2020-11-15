@@ -9,6 +9,7 @@ import { days, months, monthsShort } from "../common/locales.js";
 import * as util from "../common/utils";
 
 let dateFormat, clockCallback;
+let blink = false;
 
 export function initialize(granularity, dateFormatString, callback) {
     dateFormat = dateFormatString;
@@ -34,7 +35,15 @@ function tickHandler(evt) {
     }
     let mins = util.zeroPad(today.getMinutes());
 
-    let timeString = `${hours}:${mins}`;
+    let colon;
+    if (blink) {
+        colon = ':';
+        blink = !blink;
+    } else {
+        colon = '';
+        blink = !blink;
+    }
+
     let dateString = today;
 
     switch(dateFormat) {
@@ -48,5 +57,5 @@ function tickHandler(evt) {
             dateString = `${dayName} ${monthName} ${dayNumber}`;
             break;
     }
-    clockCallback({time: timeString, date: dateString});
+    clockCallback({hours: hours, mins: mins, colon: colon, date: dateString});
 }

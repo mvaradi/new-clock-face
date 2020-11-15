@@ -1,6 +1,8 @@
 <svg>
   <image href="berni.png" />
-  <text id="txtTime" class="clock-text" />
+  <text id="txtTimeHour" class="clock-text hour" />
+  <text id="txtTimeColon" class="clock-text colon" />
+  <text id="txtTimeMinute" class="clock-text minute" />
   <text id="txtDate" class="date-text" />
   <text id="battery" class="battery-text" />
 </svg>
