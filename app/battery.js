@@ -14,11 +14,27 @@ function tickHandler(evt) {
 }
 
 let batteryData = () => {
-    return {
-        charge: getCharge()
-    };
+    return getCharge();
 };
 
 function getCharge() {
-    return Math.floor(battery.battery.chargeLevel);
+    const currentLevel = battery.battery.chargeLevel;
+    let currentIcon = "";
+
+    if (currentLevel <= 25) {
+        currentIcon = "battery_25.png";
+    } else if (currentLevel <= 50) {
+        currentIcon = "battery_50.png";
+    } else if (currentLevel <= 75) {
+        currentIcon = "battery_75.png";
+    } else if (currentLevel <= 100) {
+        currentIcon = "battery_100.png";
+    } else {
+        currentIcon = "";
+    }
+
+    return {
+        charge: Math.floor(currentLevel),
+        iconHref: currentIcon
+    };
 }

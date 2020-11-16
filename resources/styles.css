@@ -22,8 +22,16 @@
   font-size: 25;
   font-family: System-Bold;
   text-length: 10;
-  x: 2%;
+  x: 8%;
   y: 10%;
+  fill: white;
+}
+
+#battery-icon {
+  width: 15;
+  height: 22;
+  x: 2%;
+  y: 10;
   fill: white;
 }
 

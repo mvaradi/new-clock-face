@@ -1,10 +1,11 @@
 <svg>
-  <image href="berni.png" />
-  <text id="txtTimeHour" class="clock-text hour" />
-  <text id="txtTimeColon" class="clock-text colon" />
-  <text id="txtTimeMinute" class="clock-text minute" />
+  <image href="background.png" />
+  <svg>
+    <image id="battery-icon" href="" />
+    <text id="battery" class="battery-text" />
+  </svg>
+  <text id="txtTime" class="clock-text" />
   <text id="txtDate" class="date-text" />
-  <text id="battery" class="battery-text" />
   <svg>
     <image id="hrm-icon" href="heart.png" />
     <text id="hrm-text" />

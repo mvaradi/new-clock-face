@@ -3,13 +3,14 @@ import * as customClock from "./clock";
 import * as simpleHRM from "./hrm";
 import * as simpleBattery from "./battery"
 
-// TODO add battery icons: low, medium, high and charging
+// TODO add battery icons: charging
 // TODO add active minutes goal meter
 // TODO add step count goal meter
 
 let txtTime = document.getElementById("txtTime");
 let txtDate = document.getElementById("txtDate");
 let txtBattery = document.getElementById("battery");
+let iconBattery = document.getElementById("battery-icon");
 let txtHRM = document.getElementById("hrm-text");
 let iconHRM = document.getElementById("hrm-icon");
 
@@ -23,6 +24,7 @@ customClock.initialize("minutes", "longDate", clockCallback);
 /* -------- BATTERY --------- */
 function batteryCallback(data) {
     txtBattery.text = data.charge + "%";
+    iconBattery.href = data.iconHref;
 }
 simpleBattery.initialize("seconds", batteryCallback);
 
