@@ -1,7 +1,7 @@
-import battery from "power";
 import document from "document";
 import * as customClock from "./clock";
 import * as simpleHRM from "./hrm";
+import * as simpleBattery from "./battery"
 
 // TODO add battery icons: low, medium, high and charging
 // TODO add active minutes goal meter
@@ -21,7 +21,10 @@ function clockCallback(data) {
 customClock.initialize("minutes", "longDate", clockCallback);
 
 /* -------- BATTERY --------- */
-txtBattery.text = Math.floor(battery.battery.chargeLevel) + "%";
+function batteryCallback(data) {
+    txtBattery.text = data.charge + "%";
+}
+simpleBattery.initialize("seconds", batteryCallback);
 
 /* -------- HRM ------------- */
 function hrmCallback(data) {
@@ -29,5 +32,3 @@ function hrmCallback(data) {
     iconHRM.href = `${data.hrmIconHref}`;
 }
 simpleHRM.initialize(hrmCallback);
-
-
