@@ -51,3 +51,39 @@
   y: 87%;
   fill: #FF214A;
 }
+
+#steps-bg {
+  x: 100;
+  y: 84%;
+}
+
+#steps-progress {
+  x: 120;
+  y: 84%;
+}
+
+#steps-icon {
+  width: 17;
+  height: 17;
+  x: 100;
+  y: 254;
+  fill: white;
+}
+
+#active-bg {
+  x: 100;
+  y: 92%;
+}
+
+#active-progress {
+  x: 120;
+  y: 92%;
+}
+
+#active-icon {
+  width: 17;
+  height: 17;
+  x: 100;
+  y: 277;
+  fill: white;
+}
