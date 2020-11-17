@@ -26,11 +26,13 @@ function batteryCallback(data) {
     txtBattery.text = data.charge + "%";
     iconBattery.href = data.iconHref;
 }
-simpleBattery.initialize("seconds", batteryCallback);
+simpleBattery.initialize("minutes", batteryCallback);
 
 /* -------- HRM ------------- */
 function hrmCallback(data) {
-    txtHRM.text = `${data.bpm}`;
-    iconHRM.href = `${data.hrmIconHref}`;
+    txtHRM.text = data.bpm;
+    iconHRM.href = data.hrmIconHref;
 }
 simpleHRM.initialize(hrmCallback);
+
+
