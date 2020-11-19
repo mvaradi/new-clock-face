@@ -13,11 +13,11 @@
   <svg>
     <rect id="steps-bg" width="180" height="20" fill="fb-extra-dark-gray" fill-opacity="0.8" />
     <image id="steps-icon" href="steps.png" />
-    <rect id="steps-progress" width="160" height="20" fill="rgb(176, 199, 237)" fill-opacity="0.6" />
+    <rect id="steps-progress" width="0" height="20" fill="rgb(176, 199, 237)" fill-opacity="0.6" />
   </svg>
   <svg>
     <rect id="active-bg" width="180" height="20" fill="fb-extra-dark-gray" fill-opacity="0.8" />
     <image id="active-icon" href="active_minutes.png" />
-    <rect id="active-progress" width="50" height="20" fill="rgb(176, 199, 237)" fill-opacity="0.6" />
+    <rect id="active-progress" width="0" height="20" fill="rgb(176, 199, 237)" fill-opacity="0.6" />
   </svg>
 </svg>

@@ -1,10 +1,8 @@
 import document from "document";
 import * as customClock from "./clock";
-import * as simpleHRM from "./hrm";
-import * as simpleBattery from "./battery"
-
-// TODO add active minutes goal meter
-// TODO add step count goal meter
+import * as customHRM from "./hrm";
+import * as customBattery from "./battery"
+import * as customActivity from "./activity";
 
 let txtTime = document.getElementById("txtTime");
 let txtDate = document.getElementById("txtDate");
@@ -12,6 +10,8 @@ let txtBattery = document.getElementById("battery");
 let iconBattery = document.getElementById("battery-icon");
 let txtHRM = document.getElementById("hrm-text");
 let iconHRM = document.getElementById("hrm-icon");
+let stepsProgress = document.getElementById("steps-progress");
+let activeProgress = document.getElementById("active-progress");
 
 /* --------- CLOCK ---------- */
 function clockCallback(data) {
@@ -25,13 +25,18 @@ function batteryCallback(data) {
     txtBattery.text = data.charge + "%";
     iconBattery.href = data.iconHref;
 }
-simpleBattery.initialize("minutes", batteryCallback);
+customBattery.initialize("minutes", batteryCallback);
 
 /* -------- HRM ------------- */
 function hrmCallback(data) {
     txtHRM.text = data.bpm;
     iconHRM.href = data.hrmIconHref;
 }
-simpleHRM.initialize(hrmCallback);
+customHRM.initialize(hrmCallback);
 
-
+/* --------- ACTIVITY ---------- */
+function activityCallback(data) {
+    stepsProgress.width = Math.floor(data.steps * 160);
+    activeProgress.width = Math.floor(data.activeMinutes * 160);
+}
+customActivity.initialize("minutes", activityCallback);
