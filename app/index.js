@@ -3,7 +3,6 @@ import * as customClock from "./clock";
 import * as simpleHRM from "./hrm";
 import * as simpleBattery from "./battery"
 
-// TODO add battery icons: charging
 // TODO add active minutes goal meter
 // TODO add step count goal meter
 

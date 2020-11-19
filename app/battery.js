@@ -1,5 +1,6 @@
 import clock from "clock";
-import battery from "power";
+import { battery } from "power";
+import { charger } from "power";
 
 let batteryCallback;
 
@@ -18,10 +19,12 @@ let batteryData = () => {
 };
 
 function getCharge() {
-    const currentLevel = battery.battery.chargeLevel;
+    const currentLevel = battery.chargeLevel;
     let currentIcon = "";
 
-    if (currentLevel <= 25) {
+    if (charger.connected) {
+        currentIcon = "battery_charging.png";
+    } else if (currentLevel <= 25) {
         currentIcon = "battery_25.png";
     } else if (currentLevel <= 50) {
         currentIcon = "battery_50.png";
@@ -32,6 +35,7 @@ function getCharge() {
     } else {
         currentIcon = "";
     }
+
 
     return {
         charge: Math.floor(currentLevel),
