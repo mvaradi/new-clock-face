@@ -1,3 +1,7 @@
+/*
+  Returns the current charge level and the corresponding battery icon.
+  Callback should be used to update your UI.
+*/
 import clock from "clock";
 import { battery } from "power";
 import { charger } from "power";
@@ -19,9 +23,14 @@ let batteryData = () => {
 };
 
 function getCharge() {
+    // Get the current change level
     const currentLevel = battery.chargeLevel;
     let currentIcon = "";
 
+    /*
+      Based on the charge level, set the battery icon.
+      Use a special icon if the device is being charged
+    */
     if (charger.connected) {
         currentIcon = "battery_charging.png";
     } else if (currentLevel <= 25) {
@@ -35,7 +44,6 @@ function getCharge() {
     } else {
         currentIcon = "";
     }
-
 
     return {
         charge: Math.floor(currentLevel),
