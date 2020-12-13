@@ -1,5 +1,7 @@
 # Custom FitBit Clock Face
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/4a16cba0319a5d15ffd1/maintainability)](https://codeclimate.com/github/mvaradi/new-clock-face/maintainability)
+
 This is a small personal project for creating a custom clock face for my FitBit. 
 
 ## Basic information
